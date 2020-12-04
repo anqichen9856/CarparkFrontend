@@ -1,5 +1,8 @@
-carpark.controller('carparkCtrl', function($scope, $http, loginService) {
-     console.log(loginService.loginDetails);
+carpark.controller('carparkCtrl', function($scope, $http, loginService, $window) {
+     if (!loginService.loginDetails.token) {
+        alert("Please log in first.")
+        $window.location.href = '#/login';
+     }
     
     // $scope.signIn = function() {
     //     if (!$scope.validateInput()) return;
