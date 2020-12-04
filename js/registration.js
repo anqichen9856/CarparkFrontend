@@ -1,5 +1,5 @@
-carpark.controller('registrationCtrl', function($scope, $http) {
-    $scope.signUp = function() {
+carpark.controller('registrationCtrl', function ($scope, $http) {
+    $scope.signUp = function () {
         if (!$scope.validateInput()) return;
         if (!$scope.contact) {
             $scope.contact = null;
@@ -14,17 +14,24 @@ carpark.controller('registrationCtrl', function($scope, $http) {
                 "Contact": $scope.contact,
                 "Password": $scope.password
             }
-          }).then(function (response) {
-              alert("User has been succesfully registered.");
-            })
+        }).then(function (response) {
+            alert("User has been succesfully registered.");
+        }, function (response) {
+            if (response.data.message) {
+                alert(response.data.message);
+            }
+        })
     }
 
-    $scope.validateInput = function() {
-        var required = $scope.firstName && $scope.lastName && $scope.email && $scope.password && $scope.confirmed; 
-        if (required && $scope.password != $scope.confirmed) {
+    $scope.validateInput = function () {
+        var required = $scope.firstName && $scope.lastName && $scope.email && $scope.password && $scope.confirmed;
+        if (!required) {
+            return false;
+        } else if ($scope.password != $scope.confirmed) {
             alert("Passwords do not match.");
             return false;
+        } else {
+            return true;
         }
-        return true;
     }
 });

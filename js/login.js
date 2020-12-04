@@ -14,7 +14,9 @@ carpark.controller('loginCtrl', function($scope, $http, loginService, $window) {
                 alert("You have successfully logged in.")
                 $window.location.href = '#/carpark';
             }, function(response){
-                alert(response.data.message);
+                if (response.data.message) {
+                    alert(response.data.message);
+                }
             })
     }
 

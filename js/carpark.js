@@ -19,7 +19,9 @@ carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window
           }).then(function (response) {
                 $scope.carparkData = response.data.items[0].carpark_data;
             }, function(response){
-                alert(response.data.message);
+                if (response.data.message) {
+                    alert(response.data.message);
+                }
             })
     }
 
