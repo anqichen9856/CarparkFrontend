@@ -17,7 +17,7 @@ carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window
             method: 'GET',
             url: 'http://localhost:5000/users/carpark/' + queryString,
           }).then(function (response) {
-                $scope.carparkData = response.data.items[0];
+                $scope.carparkData = response.data.items[0].carpark_data;
             }, function(response){
                 alert(response.data.message);
             })

@@ -22,8 +22,29 @@
                 <button class="btn btn-lg btn-primary btn-block query-btn" type="submit" ng-click="sendQuery()">
                     Send Query</button>
             </form>
+            <br>
             <h2>Response:</h2>
-            {{carparkData}}
         </div>
+    </div>
+
+    <div class="row">        
+        <table class="col-md-12">
+            <tr>
+                <th>Carpark Number</th>
+                <th>Lot Type</th>
+                <th>Lots Available</th>
+                <th>Total Lots</th>
+                <th>Update Date & Time</th>
+            </tr>
+            <tbody ng-repeat="x in carparkData">
+                <tr>
+                    <td>{{x.carpark_number}}</td>
+                    <td>{{x.carpark_info[0].lot_type}}</td>
+                    <td>{{x.carpark_info[0].lots_available}}</td>
+                    <td>{{x.carpark_info[0].total_lots}}</td>
+                    <td>{{x.update_datetime}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
