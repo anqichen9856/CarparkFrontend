@@ -1,9 +1,16 @@
-carpark.controller('carparkCtrl', function($scope, $http, loginService, $window) {
-     if (!loginService.loginDetails.token) {
+carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window) {
+    if (!loginService.loginDetails.token) {
         alert("Please log in first.")
         $window.location.href = '#/login';
-     }
-    
+        return;
+    }
+    // $scope.userId = loginService.loginDetails.id;
+    $scope.firstName = loginService.loginDetails.firstName;
+    $scope.lastName = loginService.loginDetails.lastName;
+    $scope.email = loginService.loginDetails.email;
+    $scope.contact = loginService.loginDetails.contact;
+    $scope.token = loginService.loginDetails.token;
+
     // $scope.signIn = function() {
     //     if (!$scope.validateInput()) return;
     //     $http({
