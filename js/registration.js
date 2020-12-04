@@ -30,6 +30,9 @@ carpark.controller('registrationCtrl', function ($scope, $http) {
         } else if ($scope.password != $scope.confirmed) {
             alert("Passwords do not match.");
             return false;
+        } else if ($scope.contact && $scope.contact.match(/^[+0-9() ]+$/g) == null) {
+            alert("Contact number may only contain 0~9, +, (, ), space.")
+            return false;
         } else {
             return true;
         }
