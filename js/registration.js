@@ -8,8 +8,8 @@ carpark.controller('registrationCtrl', function($scope, $http) {
             method: 'POST',
             url: 'http://localhost:5000/users/register',
             data: {
-                "FirstName": $scope.firstname,
-                "LastName": $scope.lastname,
+                "FirstName": $scope.firstName,
+                "LastName": $scope.lastName,
                 "Email": $scope.email,
                 "Contact": $scope.contact,
                 "Password": $scope.password
@@ -20,7 +20,7 @@ carpark.controller('registrationCtrl', function($scope, $http) {
     }
 
     $scope.validateInput = function() {
-        var required = $scope.firstname && $scope.lastname && $scope.email && $scope.password && $scope.confirmed; 
+        var required = $scope.firstName && $scope.lastName && $scope.email && $scope.password && $scope.confirmed; 
         if (required && $scope.password != $scope.confirmed) {
             alert("Passwords do not match.");
             return false;
