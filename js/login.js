@@ -1,4 +1,4 @@
-carpark.controller('loginCtrl', function($scope, $http, loginService) {
+carpark.controller('loginCtrl', function($scope, $http, loginService, $window) {
     $scope.signIn = function() {
         if (!$scope.validateInput()) return;
         $http({
@@ -11,6 +11,7 @@ carpark.controller('loginCtrl', function($scope, $http, loginService) {
           }).then(function (response) {
                 loginService.loginDetails = response.data;
                 alert("You have successfully logged in.")
+                $window.location.href = '#/carpark';
             }, function(response){
                 alert(response.data.message);
             })
