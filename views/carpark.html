@@ -7,15 +7,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-                <h2>User Information:</h2>
-                <div class="row">
-                    <h4>Name: {{firstName}} {{lastName}}</h4>
-                    <h4>Email: {{email}}</h4>
-                    <h4>Contact: {{contact}}</h4>
-                </div>
+            <h2>User Information:</h2>
+            <div class="row">
+                <h4>Name: {{firstName}} {{lastName}}</h4>
+                <h4>Email: {{email}}</h4>
+                <h4>Contact: {{contact}}</h4>
+            </div>
+            <form accept-charset="utf-8" class="form" role="form">
                 <h2>Get Carpark Availability</h2>
-                
+                <div class="row">
+                    <input type="datetime-local" ng-model="dateTime" class="form-control input-lg" required>
+                </div>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block query-btn" type="submit" ng-click="sendQuery()">
+                    Send Query</button>
             </form>
+            <h2>Response:</h2>
+            {{carparkData}}
         </div>
     </div>
 </div>

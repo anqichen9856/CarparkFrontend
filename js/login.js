@@ -10,6 +10,7 @@ carpark.controller('loginCtrl', function($scope, $http, loginService, $window) {
             }
           }).then(function (response) {
                 loginService.loginDetails = response.data;
+                $http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
                 alert("You have successfully logged in.")
                 $window.location.href = '#/carpark';
             }, function(response){
