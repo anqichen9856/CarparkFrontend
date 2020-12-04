@@ -1,6 +1,6 @@
 carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window) {
     if (!loginService.loginDetails.token) {
-        alert("Please log in first.")
+        alert("Please log in or register first.")
         $window.location.href = '#/login';
         return;
     }

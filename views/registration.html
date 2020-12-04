@@ -9,23 +9,27 @@
         <div class="col-md-6 col-md-offset-3">
             <form accept-charset="utf-8" class="form" role="form">
                 <h2>User Registration</h2>
+                <br>
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" ng-model="firstName" class="form-control input-lg" placeholder="First Name"
-                            required>
+                        <h4>First Name<span class="required">*</span>:</h4>
+                        <input type="text" ng-model="firstName" class="form-control input-lg" required>
                     </div>
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" ng-model="lastName" class="form-control input-lg" placeholder="Last Name"
-                            required>
+                        <h4>Last Name<span class="required">*</span>:</h4>
+                        <input type="text" ng-model="lastName" class="form-control input-lg" required>
                     </div>
                 </div>
-                <input type="email" ng-model="email" class="form-control input-lg" placeholder="Your Email" required>
-                <input type="text" ng-model="contact" class="form-control input-lg" placeholder="Your Contact Number">
-                <input type="password" ng-model="password" class="form-control input-lg" placeholder="Password"
-                    required>
-                <input type="password" ng-model="confirmed" class="form-control input-lg" placeholder="Confirm Password"
-                    required>
-                <br>
+                <h4>Email<span class="required">*</span>:</h4>
+                <input type="email" ng-model="email" class="form-control input-lg" required>
+                <h4>Contact Number:</h4>
+                <input type="text" ng-model="contact" class="form-control input-lg">
+                <h4>Password<span class="required">*</span>:</h4>
+                <input type="password" ng-model="password" class="form-control input-lg" required>
+                <h4>Confirm Password<span class="required">*</span>:</h4>
+                <input type="password" ng-model="confirmed" class="form-control input-lg" required>
+                <span class="required">*</span>Required fields
+                <br><br>
                 <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit" ng-click="signUp()">
                     Sign Up</button>
             </form>
