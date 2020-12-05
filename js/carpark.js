@@ -1,9 +1,12 @@
 carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window) {
     if (!loginService.loginDetails.token) {
+        //unauthenticated
         alert("Please log in or register first.")
+        //redirect to login page
         $window.location.href = '#/login';
         return;
     }
+    //get user details and token from login page
     $scope.firstName = loginService.loginDetails.firstName;
     $scope.lastName = loginService.loginDetails.lastName;
     $scope.email = loginService.loginDetails.email;
@@ -11,7 +14,9 @@ carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window
     $scope.token = loginService.loginDetails.token;
 
     $scope.sendQuery = function() {
+        //validate query parameters
         if (!$scope.validateInput()) return;
+        //complete ":ss" time field with ":00"
         var queryString = $scope.dateTime + ":00";
         $http({
             method: 'GET',
@@ -26,6 +31,7 @@ carpark.controller('carparkCtrl', function ($scope, $http, loginService, $window
     }
 
     $scope.validateInput = function() {
+        //query datetime cannot be empty
         return $scope.dateTime;
     }
 });

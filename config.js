@@ -1,5 +1,6 @@
 var carpark = angular.module('carpark', ['ngRoute']);
 carpark.config(function($routeProvider) {
+	//routing on navigation bar
 	$routeProvider
 		.when('/registration', {
 			templateUrl: 'views/registration.html',
