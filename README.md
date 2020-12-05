@@ -21,6 +21,7 @@ This project is built with AngularJS.
     sudo npm install http-server -g
     http-server
     ```
+    If `npm` command is not found, install Node.js at https://nodejs.org/en/download/
 5. Open your browser (Chrome preferred) and go to the IP and port on which your server has started 
 6. You can now try out the carpark availability system
 
