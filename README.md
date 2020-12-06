@@ -15,7 +15,7 @@ This project is built with AngularJS.
 
 1. Set up the backend carpark API and get it running, by following instructions at https://github.com/anqichen9856/CarparkApi
 2. Download this frontend project in Zip and decompress it
-3. Open your terminal, go to the project directory (where this README.md is located)
+3. Open your terminal, go to the project root directory
 4. In the terminal, type the following two commands:
     ```
     sudo npm install http-server -g
